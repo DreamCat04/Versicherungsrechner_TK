@@ -1,0 +1,22 @@
+*.pdf
+/RechnerProgramm/node_modules
+/RechnerProgramm/
+/RechnerProgramm//.pnp
+/RechnerProgramm/.pnp.js
+
+# testing
+/RechnerProgramm//coverage
+
+# production
+/RechnerProgramm//build
+
+# misc
+/RechnerProgramm/.DS_Store
+/RechnerProgramm/.env.local
+/RechnerProgramm/.env.development.local
+/RechnerProgramm/.env.test.local
+/RechnerProgramm/.env.production.local
+
+/RechnerProgramm/npm-debug.log*
+/RechnerProgramm/yarn-debug.log*
+/RechnerProgramm/yarn-error.log*
