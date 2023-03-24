@@ -8,7 +8,7 @@
 
 ---
 
-In diesem Dokument mache ich alle meine Tätigkeiten zum Projek transparent.
+In diesem Dokument mache ich alle meine Tätigkeiten zum Projekt transparent.
 
 * Liste mit allen Ideen, die in meinem Projekt noch anstehen
 * Liste mit allen Ideen, die ich in einem deklarierten Zeitraum erledigen werde.
