@@ -20,15 +20,8 @@ public class Rechner extends JPanel implements ActionListener {
 		frame.setVisible(true);
 		frame.setSize(640, 360);
 		
-		damageDesc.setSize(640, 50);
-		damageAmount.setSize(640, 50);
-		sumDesc.setSize(640, 50);
-		sumAmount.setSize(640, 50);
-		output.setSize(640, 50);
-		damageAmount.setSize(640, 50);
-		
 		versSumme.setVisible(true);
-		versSumme.setSize(640, 360);
+		versSumme.setLayout(new BoxLayout(versSumme, BoxLayout.Y_AXIS));
 		versSumme.add(damageDesc);
 		versSumme.add(damageAmount);
 		versSumme.add(sumDesc);
