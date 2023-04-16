@@ -38,7 +38,6 @@ public class Rechner extends JPanel implements ActionListener {
 		sumAmount.setMaximumSize(new Dimension(640, 50));
 		insuranceAmount.setMaximumSize(new Dimension(640, 50));
 		
-		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
