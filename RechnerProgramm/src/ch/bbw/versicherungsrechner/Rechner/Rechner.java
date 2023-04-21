@@ -1,7 +1,5 @@
 package ch.bbw.versicherungsrechner.Rechner;
 
-import javax.swing.*;
-
 public class Rechner {
 	
 	public Rechner(){
