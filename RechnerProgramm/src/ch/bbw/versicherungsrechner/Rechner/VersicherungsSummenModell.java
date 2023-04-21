@@ -18,9 +18,10 @@ public class VersicherungsSummenModell {
 	JButton submit = new JButton("Schadensersatz berechnen!");
 	JButton switchToQuadratMeterModell = new JButton("Zum Quadratmetermodell");
 	boolean isSwitchButtonPressed = false;
+	JFrame frame = new JFrame("Schadensrechner"); //Frame ist für Fenster, Panel ist das, was in diesem Fenster ist.
 	JPanel versSummeModell = new JPanel();
 	public void draw() {
-		JFrame frame = new JFrame("Schadensrechner");
+		
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -68,6 +69,6 @@ public class VersicherungsSummenModell {
 		});
 	}
 	public void delete() {
-		versSummeModell.setVisible(false);
+		frame.dispose();
 	}
 }

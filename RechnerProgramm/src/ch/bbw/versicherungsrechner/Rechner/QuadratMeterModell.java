@@ -8,7 +8,7 @@ import java.text.NumberFormat;
 
 public class QuadratMeterModell {
 	JFrame frame = new JFrame("Schadensrechner");
-	JPanel quadratMeterModell = new JPanel();
+	JPanel quaMeterModell = new JPanel();
 	JLabel damagedAreaDesc = new JLabel("Die Fläche Ihres Hauses, die zerstört wurde:");
 	JFormattedTextField enterDamagedArea = new JFormattedTextField(NumberFormat.getIntegerInstance());
 	JLabel totalHouseAreaDesc = new JLabel("Die Gesamtfläche Ihres Hauses:");
@@ -20,10 +20,7 @@ public class QuadratMeterModell {
 	JTextField payoutAmount = new JTextField();
 	JButton switchToVersSummModell = new JButton("Zum Versicherungssummenmodell");
 	boolean isSwitchButtonPressed = false;
-	JPanel quaMeterModell = new JPanel();
-	public QuadratMeterModell() {
 	
-	}
 	public void draw(){
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -72,6 +69,6 @@ public class QuadratMeterModell {
 		
 	}
 	public void delete(){
-		quaMeterModell.setVisible(false);
+		frame.dispose();
 	}
 }
