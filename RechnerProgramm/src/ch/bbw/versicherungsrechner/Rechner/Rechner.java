@@ -11,6 +11,9 @@ public class Rechner extends JPanel {
 		if (versSummeModell.isSwitchButtonPressed){
 		versSummeModell.delete();
 		quaMeterModell.draw();
+		} else if (quaMeterModell.isSwitchButtonPressed){
+			quaMeterModell.delete();
+			versSummeModell.draw();
 		}
 		
 	}

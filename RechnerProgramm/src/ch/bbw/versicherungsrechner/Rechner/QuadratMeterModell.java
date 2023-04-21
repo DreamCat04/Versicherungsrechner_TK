@@ -2,6 +2,8 @@ package ch.bbw.versicherungsrechner.Rechner;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
 public class QuadratMeterModell {
@@ -23,8 +25,6 @@ public class QuadratMeterModell {
 	
 	}
 	public void draw(){
-		
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setSize(640, 360);
@@ -47,5 +47,31 @@ public class QuadratMeterModell {
 		enterTotalHouseArea.setSize(new Dimension(640, 50));
 		enterPricePerSquareMeter.setSize(new Dimension(640, 50));
 		payoutAmount.setSize(new Dimension(640, 50));
+		
+		submit.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int damagedArea = Integer.parseInt(enterDamagedArea.getText());
+				int houseArea = Integer.parseInt(enterTotalHouseArea.getText());
+				int pricePerSquareMeter = Integer.parseInt(enterPricePerSquareMeter.getText());
+				int houseValue = houseArea * pricePerSquareMeter;
+				int damageAmount = damagedArea * pricePerSquareMeter;
+				if (damageAmount < houseValue) {
+					payoutAmount.setText(String.valueOf(damageAmount));
+				} else {
+					payoutAmount.setText("Es ist nicht möglich, dass mehr Fläche zerstört wurde, als in Ihrem Haus vorhanden ist!");
+				}
+			}
+		});
+		switchToVersSummModell.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				isSwitchButtonPressed = true;
+			}
+		});
+		
+	}
+	public void delete(){
+		quaMeterModell.setVisible(false);
 	}
 }
