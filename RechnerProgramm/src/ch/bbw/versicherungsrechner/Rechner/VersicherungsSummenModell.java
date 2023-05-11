@@ -14,7 +14,7 @@ public class VersicherungsSummenModell {
 	JLabel insurancePayout = new JLabel("Ihr Schadensersatz beträgt: ");
 	JLabel damageDesc = new JLabel("Ihre Schadenssumme:");
 	JLabel houseValueDesc = new JLabel("Der Hausratswert Ihres Hauses:");
-	JLabel sumDesc = new JLabel("Ihre Versicherungssumme ein:");
+	JLabel sumDesc = new JLabel("Ihre Versicherungssumme:");
 	JButton submit = new JButton("Schadensersatz berechnen!");
 	JButton switchToQuadratMeterModell = new JButton("Zum Quadratmetermodell");
 	boolean isSwitchButtonPressed = false;
