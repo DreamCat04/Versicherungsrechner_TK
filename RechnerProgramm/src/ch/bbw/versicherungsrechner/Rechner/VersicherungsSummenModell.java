@@ -54,14 +54,14 @@ public class VersicherungsSummenModell {
 	JFormattedTextField enterHouseValue = createValueField();
 	JFormattedTextField enterInsuranceSum = createInsuranceField();
 	JTextField payoutAmount = new JTextField();
-	JLabel insurancePayout = new JLabel("Ihr Schadensersatz beträgt: ");
+	JLabel insurancePayout = new JLabel("Ihr Schadensersatz beträgt:");
 	JLabel damageDesc = new JLabel("Ihre Schadenssumme:");
 	JLabel houseValueDesc = new JLabel("Der Hausratswert Ihres Hauses:");
 	JLabel sumDesc = new JLabel("Ihre Versicherungssumme:");
 	JButton submit = new JButton("Schadensersatz berechnen!");
 	JButton switchToQuadratMeterModell = new JButton("Zum Quadratmetermodell");
 	boolean isSwitchButtonPressed = false;
-	JFrame frame = new JFrame("Schadensrechner"); //Frame ist für Fenster, Panel ist das, was in diesem Fenster ist.
+	JFrame frame = new JFrame("Versicherungssummenmodell"); //Frame ist für Fenster, Panel ist das, was in diesem Fenster ist.
 	JPanel versSummeModell = new JPanel();
 	
 	public void draw() {
@@ -108,11 +108,15 @@ public class VersicherungsSummenModell {
 		switchToQuadratMeterModell.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(e.getSource());
-				isSwitchButtonPressed = true;
+				setSwitchButtonPressed(true);
 			}
 		});
 	}
+	
+	public void setSwitchButtonPressed(boolean switchButtonPressed) {
+		isSwitchButtonPressed = switchButtonPressed;
+	}
+	
 	public void delete() {
 		frame.dispose();
 	}

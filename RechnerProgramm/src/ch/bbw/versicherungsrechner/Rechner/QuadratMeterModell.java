@@ -64,10 +64,15 @@ public class QuadratMeterModell {
 		switchToVersSummModell.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				isSwitchButtonPressed = true;
+				setSwitchButtonPressed(true);
 			}
 		});
 	}
+	
+	public void setSwitchButtonPressed(boolean switchButtonPressed) {
+		isSwitchButtonPressed = switchButtonPressed;
+	}
+	
 	public void delete(){
 		frame.dispose();
 	}
