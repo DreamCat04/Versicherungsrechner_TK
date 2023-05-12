@@ -26,6 +26,7 @@ public class QuadratMeterModell {
 		frame.setVisible(true);
 		frame.setSize(640, 360);
 		frame.add(quaMeterModell);
+		frame.setLocation(480, 270);
 		
 		quaMeterModell.setVisible(true);
 		quaMeterModell.setLayout(new BoxLayout(quaMeterModell, BoxLayout.PAGE_AXIS));
@@ -66,7 +67,6 @@ public class QuadratMeterModell {
 				isSwitchButtonPressed = true;
 			}
 		});
-		
 	}
 	public void delete(){
 		frame.dispose();

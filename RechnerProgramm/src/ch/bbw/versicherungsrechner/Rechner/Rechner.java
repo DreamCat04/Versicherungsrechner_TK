@@ -8,13 +8,13 @@ public class Rechner {
 		versSummeModell.draw();
 		while (true){
 			if (versSummeModell.isSwitchButtonPressed){
+				versSummeModell.isSwitchButtonPressed = false;
 				versSummeModell.delete();
 				quaMeterModell.draw();
-				versSummeModell.isSwitchButtonPressed = false;
 			} else if (quaMeterModell.isSwitchButtonPressed){
+				quaMeterModell.isSwitchButtonPressed = false;
 				quaMeterModell.delete();
 				versSummeModell.draw();
-				quaMeterModell.isSwitchButtonPressed = false;
 			}
 		}
 	}
