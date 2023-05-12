@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
 public class VersicherungsSummenModell {
-	private JFormattedTextField createDamageField() {
+	JFormattedTextField createDamageField() {
 		NumberFormat format = NumberFormat.getIntegerInstance();
 		format.setGroupingUsed(false); // Disable grouping separators
 		
@@ -22,7 +22,7 @@ public class VersicherungsSummenModell {
 		
 		return textField;
 	}
-	private JFormattedTextField createInsuranceField() {
+	JFormattedTextField createInsuranceField() {
 		NumberFormat format = NumberFormat.getIntegerInstance();
 		format.setGroupingUsed(false); // Disable grouping separators
 		
@@ -36,7 +36,7 @@ public class VersicherungsSummenModell {
 		
 		return textField;
 	}
-	private JFormattedTextField createValueField() {
+	JFormattedTextField createValueField() {
 		NumberFormat format = NumberFormat.getIntegerInstance();
 		format.setGroupingUsed(false); // Disable grouping separators
 		
@@ -108,6 +108,7 @@ public class VersicherungsSummenModell {
 		switchToQuadratMeterModell.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				System.out.println(e.getSource());
 				isSwitchButtonPressed = true;
 			}
 		});
