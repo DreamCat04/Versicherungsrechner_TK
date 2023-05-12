@@ -42,9 +42,9 @@ Ich informiere regelmässig über meine Tätigkeiten.
 
 #### erledigt
 
-* [ ] Versicherungsmodell frontend
-* [ ] Versicherungsmodell backend
-* [ ] Quadratmetermodell frontend
-* [ ] Quadratmetermodell backend
-* [ ] Wechsel zwischen beiden Modellen
-* [ ] Wechsel ging nicht mehr, mit anderer Lösungsmethode behoben
+* [x] Versicherungsmodell frontend
+* [x] Versicherungsmodell backend
+* [x] Quadratmetermodell frontend
+* [x] Quadratmetermodell backend
+* [x] Wechsel zwischen beiden Modellen
+* [x] Wechsel ging nicht mehr, mit anderer Lösungsmethode behoben
