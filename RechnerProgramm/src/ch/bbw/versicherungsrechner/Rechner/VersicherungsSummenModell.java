@@ -20,13 +20,15 @@ public class VersicherungsSummenModell {
 	boolean isSwitchButtonPressed = false;
 	JFrame frame = new JFrame("Schadensrechner"); //Frame ist für Fenster, Panel ist das, was in diesem Fenster ist.
 	JPanel versSummeModell = new JPanel();
+	ImageIcon hausImage = new ImageIcon("/img/Haus.jpeg");
+	JLabel imageContainer = new JLabel(hausImage);
+	
 	public void draw() {
-		
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setSize(640, 360);
 		frame.add(versSummeModell);
+		frame.setLocation(480, 270);
 		
 		versSummeModell.setVisible(true);
 		versSummeModell.setLayout(new BoxLayout(versSummeModell, BoxLayout.PAGE_AXIS));
@@ -40,33 +42,28 @@ public class VersicherungsSummenModell {
 		versSummeModell.add(submit);
 		versSummeModell.add(insurancePayout);
 		versSummeModell.add(payoutAmount);
+		versSummeModell.add(imageContainer);
 		
 		enterDamageAmount.setSize(new Dimension(500, 50));
 		enterInsuranceSum.setSize(new Dimension(640, 50));
 		enterHouseValue.setSize(new Dimension(640, 50));
 		payoutAmount.setSize(new Dimension(640, 50));
 		
-		submit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int damageAmount = Integer.parseInt(enterDamageAmount.getText());
-				int houseValue = Integer.parseInt(enterHouseValue.getText());
-				int insuranceSum = Integer.parseInt(enterInsuranceSum.getText());
-				if(insuranceSum > houseValue) {
-					payoutAmount.setText(String.valueOf(damageAmount));
-				} else if (damageAmount > houseValue) {
-					payoutAmount.setText("Sie können nicht mehr Schaden haben, als Ihr Haus aktuell Wert ist!");
-				} else {
-					double payout = Math.floor((double) insuranceSum / houseValue * damageAmount);
-					payoutAmount.setText(String.valueOf(payout));
-				}
+		imageContainer.setSize(100, 100);
+		submit.addActionListener(e -> {
+			int damageAmount = Integer.parseInt(enterDamageAmount.getText());
+			int houseValue = Integer.parseInt(enterHouseValue.getText());
+			int insuranceSum = Integer.parseInt(enterInsuranceSum.getText());
+			if(insuranceSum > houseValue) {
+				payoutAmount.setText(String.valueOf(damageAmount));
+			} else if (damageAmount > houseValue) {
+				payoutAmount.setText("Sie können nicht mehr Schaden haben, als Ihr Haus aktuell Wert ist!");
+			} else {
+				double payout = Math.floor((double) insuranceSum / houseValue * damageAmount);
+				payoutAmount.setText(String.valueOf(payout));
 			}
 		});
-		switchToQuadratMeterModell.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				isSwitchButtonPressed = true;
-			}
-		});
+		switchToQuadratMeterModell.addActionListener(e -> isSwitchButtonPressed = true);
 	}
 	public void delete() {
 		frame.dispose();
