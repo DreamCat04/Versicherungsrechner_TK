@@ -24,7 +24,7 @@ Ich informiere regelmässig über meine Tätigkeiten.
 
 ## Liste der noch anstehenden Ideen
 
-* [x] Screen, um das Versicherungsmodell auszuwählen
+* [] Screen, um das Versicherungsmodell auszuwählen
 
 ---
 
