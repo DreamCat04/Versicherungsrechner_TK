@@ -4,7 +4,7 @@
 | -------------- | ---------------|
 | Autoren:       |Thierry Kellenberger|
 | Erstellt am:   |24.03.2023  |
-| Git-Repo-URL   | [Repo](https://gitlab.com/<projekt>) |
+| Git-Repo-URL   | [Repo](https://github.com/DreamCat04/Versicherungsrechner_TK) |
 
 ---
 
@@ -24,8 +24,7 @@ Ich informiere regelmässig über meine Tätigkeiten.
 
 ## Liste der noch anstehenden Ideen
 
-* [x] <Idee>
-* [ ] <Idee>
+* [x] Screen, um das Versicherungsmodell auszuwählen
 
 ---
 
@@ -35,23 +34,17 @@ Ich informiere regelmässig über meine Tätigkeiten.
 
 #### offen
 
-* [ ] <Idee>
-* [ ] <Idee>
+* [ ] Modellauswählscreen
 
 #### in Arbeit
 
-* [ ] <Idee>
-* [ ] <Idee>
+* [ ] nichts mehr
 
 #### erledigt
 
-* [ ] <Idee>
-* [ ] <Idee>
-
-
----
-
-## Liste der zuvor abgeschlossenen Arbeiten
-
-* [ ] <Idee>
-* [ ] <Idee>
+* [ ] Versicherungsmodell frontend
+* [ ] Versicherungsmodell backend
+* [ ] Quadratmetermodell frontend
+* [ ] Quadratmetermodell backend
+* [ ] Wechsel zwischen beiden Modellen
+* [ ] Wechsel ging nicht mehr, mit anderer Lösungsmethode behoben
