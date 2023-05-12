@@ -1,6 +1,7 @@
 package ch.bbw.versicherungsrechner.Rechner;
 
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,11 +11,11 @@ public class QuadratMeterModell {
 	JFrame frame = new JFrame("Schadensrechner");
 	JPanel quaMeterModell = new JPanel();
 	JLabel damagedAreaDesc = new JLabel("Die Fläche Ihres Hauses, die zerstört wurde:");
-	JFormattedTextField enterDamagedArea = new JFormattedTextField(NumberFormat.getIntegerInstance());
+	JFormattedTextField enterDamagedArea = createDamageField();
 	JLabel totalHouseAreaDesc = new JLabel("Die Gesamtfläche Ihres Hauses:");
-	JFormattedTextField enterTotalHouseArea = new JFormattedTextField(NumberFormat.getIntegerInstance());
+	JFormattedTextField enterTotalHouseArea = createAreaField();
 	JLabel pricePerSquareMeterDesc = new JLabel("Der Durchschnittspreis pro Quadratmeter:");
-	JFormattedTextField enterPricePerSquareMeter = new JFormattedTextField(NumberFormat.getIntegerInstance());
+	JFormattedTextField enterPricePerSquareMeter = createPriceField();
 	JButton submit = new JButton("Schadensersatz berechnen!");
 	JLabel insurancePayout = new JLabel("Ihr Schadensersatz beträgt: ");
 	JTextField payoutAmount = new JTextField();
@@ -75,5 +76,47 @@ public class QuadratMeterModell {
 	
 	public void delete(){
 		frame.dispose();
+	}
+	JFormattedTextField createDamageField(){
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
+	}
+	JFormattedTextField createAreaField(){
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
+	}
+	JFormattedTextField createPriceField(){
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
 	}
 }

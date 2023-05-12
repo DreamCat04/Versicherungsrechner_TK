@@ -8,48 +8,6 @@ import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
 public class VersicherungsSummenModell {
-	JFormattedTextField createDamageField() {
-		NumberFormat format = NumberFormat.getIntegerInstance();
-		format.setGroupingUsed(false); // Disable grouping separators
-		
-		NumberFormatter formatter = new NumberFormatter(format);
-		formatter.setValueClass(Integer.class);
-		formatter.setAllowsInvalid(false);
-		formatter.setMinimum(0);
-		
-		JFormattedTextField textField = new JFormattedTextField(formatter);
-		textField.setColumns(10);
-		
-		return textField;
-	}
-	JFormattedTextField createInsuranceField() {
-		NumberFormat format = NumberFormat.getIntegerInstance();
-		format.setGroupingUsed(false); // Disable grouping separators
-		
-		NumberFormatter formatter = new NumberFormatter(format);
-		formatter.setValueClass(Integer.class);
-		formatter.setAllowsInvalid(false);
-		formatter.setMinimum(0);
-		
-		JFormattedTextField textField = new JFormattedTextField(formatter);
-		textField.setColumns(10);
-		
-		return textField;
-	}
-	JFormattedTextField createValueField() {
-		NumberFormat format = NumberFormat.getIntegerInstance();
-		format.setGroupingUsed(false); // Disable grouping separators
-		
-		NumberFormatter formatter = new NumberFormatter(format);
-		formatter.setValueClass(Integer.class);
-		formatter.setAllowsInvalid(false);
-		formatter.setMinimum(0);
-		
-		JFormattedTextField textField = new JFormattedTextField(formatter);
-		textField.setColumns(10);
-		
-		return textField;
-	}
 	JFormattedTextField enterDamageAmount = createDamageField();
 	JFormattedTextField enterHouseValue = createValueField();
 	JFormattedTextField enterInsuranceSum = createInsuranceField();
@@ -119,5 +77,47 @@ public class VersicherungsSummenModell {
 	
 	public void delete() {
 		frame.dispose();
+	}
+	JFormattedTextField createDamageField() {
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
+	}
+	JFormattedTextField createInsuranceField() {
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
+	}
+	JFormattedTextField createValueField() {
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
 	}
 }
