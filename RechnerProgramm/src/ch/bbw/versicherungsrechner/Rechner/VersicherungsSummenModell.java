@@ -1,15 +1,58 @@
 package ch.bbw.versicherungsrechner.Rechner;
 
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
 public class VersicherungsSummenModell {
-	JFormattedTextField enterDamageAmount = new JFormattedTextField(NumberFormat.getIntegerInstance());
-	JFormattedTextField enterHouseValue = new JFormattedTextField(NumberFormat.getIntegerInstance());
-	JFormattedTextField enterInsuranceSum = new JFormattedTextField(NumberFormat.getIntegerInstance());
+	private JFormattedTextField createDamageField() {
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
+	}
+	private JFormattedTextField createInsuranceField() {
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
+	}
+	private JFormattedTextField createValueField() {
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		format.setGroupingUsed(false); // Disable grouping separators
+		
+		NumberFormatter formatter = new NumberFormatter(format);
+		formatter.setValueClass(Integer.class);
+		formatter.setAllowsInvalid(false);
+		formatter.setMinimum(0);
+		
+		JFormattedTextField textField = new JFormattedTextField(formatter);
+		textField.setColumns(10);
+		
+		return textField;
+	}
+	JFormattedTextField enterDamageAmount = createDamageField();
+	JFormattedTextField enterHouseValue = createValueField();
+	JFormattedTextField enterInsuranceSum = createInsuranceField();
 	JTextField payoutAmount = new JTextField();
 	JLabel insurancePayout = new JLabel("Ihr Schadensersatz beträgt: ");
 	JLabel damageDesc = new JLabel("Ihre Schadenssumme:");
@@ -20,8 +63,6 @@ public class VersicherungsSummenModell {
 	boolean isSwitchButtonPressed = false;
 	JFrame frame = new JFrame("Schadensrechner"); //Frame ist für Fenster, Panel ist das, was in diesem Fenster ist.
 	JPanel versSummeModell = new JPanel();
-	ImageIcon hausImage = new ImageIcon("img/Haus.jpeg");
-	JLabel imageContainer = new JLabel(hausImage);
 	
 	public void draw() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,7 +74,6 @@ public class VersicherungsSummenModell {
 		versSummeModell.setVisible(true);
 		versSummeModell.setLayout(new BoxLayout(versSummeModell, BoxLayout.PAGE_AXIS));
 		versSummeModell.add(switchToQuadratMeterModell);
-		versSummeModell.add(imageContainer);
 		versSummeModell.add(damageDesc);
 		versSummeModell.add(enterDamageAmount);
 		versSummeModell.add(houseValueDesc);
@@ -49,8 +89,8 @@ public class VersicherungsSummenModell {
 		enterHouseValue.setSize(new Dimension(640, 50));
 		payoutAmount.setSize(new Dimension(640, 50));
 		
-		imageContainer.setSize(100, 100);
 		submit.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				int damageAmount = Integer.parseInt(enterDamageAmount.getText());
 				int houseValue = Integer.parseInt(enterHouseValue.getText());
